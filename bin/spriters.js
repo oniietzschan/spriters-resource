@@ -66,7 +66,7 @@
   var download_sheets = function (sheets,destination) {
     destination = destination || process.cwd();
     if(args.md){
-      var dirname = slugify(sheets.title);
+      var dirname = slugify(sheets.title).replace(":", "");
       destination += '/' + dirname;
       fs.mkdirSync(destination);
     }
