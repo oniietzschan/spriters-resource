@@ -79,7 +79,7 @@
         var file = fs.createWriteStream(filename);
         response.on("end", function() {
           num++;
-          console.log('Downloaded '+num+' of '+sheets.sheets.length);
+          console.log('Downloaded '+num+' / '+sheets.sheets.length+' - '+sheet.title+' ('+sheet.id+')');
           file.end();
         });
         response.pipe(file);
